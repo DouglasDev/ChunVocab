@@ -3,6 +3,7 @@ import { FixedSizeList } from "react-window";
 import styled from "styled-components";
 import dict from "./cedict.json";
 import debounce from "lodash.debounce";
+import { syncToDB } from "./db.js";
 
 const Search = ({}) => {
   const [filteredEntries, setFilteredEntries] = useState([]);
@@ -35,7 +36,13 @@ const Search = ({}) => {
                 <span className="def">{entry.definitions}</span>
               </div>
               <div>
-                <button>add</button>
+                <button
+                  onClick={() => {
+                    syncToDB(entry.simplified);
+                  }}
+                >
+                  add
+                </button>
               </div>
             </div>
           );
