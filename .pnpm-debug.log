@@ -1,0 +1,14 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_SCRIPT",
+    "err": {
+      "name": "Error",
+      "message": "Missing script: ii",
+      "code": "ERR_PNPM_NO_SCRIPT",
+      "stack": "Error: Missing script: ii\n    at Object.handler (/Users/douglas/.nvm/versions/node/v14.15.4/pnpm-global/5/node_modules/.pnpm/pnpm@6.4.0/node_modules/pnpm/dist/pnpm.cjs:120726:15)\n    at async Timeout._onTimeout (/Users/douglas/.nvm/versions/node/v14.15.4/pnpm-global/5/node_modules/.pnpm/pnpm@6.4.0/node_modules/pnpm/dist/pnpm.cjs:124690:24)"
+    }
+  }
+}
