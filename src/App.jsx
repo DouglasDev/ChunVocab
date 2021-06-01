@@ -15,10 +15,11 @@ function App() {
   useEffect(() => {
     dbRef.on("value", (snapshot) => {
       const data = snapshot.val();
-      console.log("data", Object.values(data?.vocab));
-      // setVocab(data?.vocab||[])
       if (data?.vocab) {
-        setVocab(Object.values(data?.vocab));
+        console.log("data", Object.values(data?.vocab));
+        setVocab(Object.entries(data?.vocab));
+      } else {
+        setVocab([]);
       }
     });
   }, []);

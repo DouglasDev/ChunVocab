@@ -3,7 +3,7 @@ const readline = require("readline");
 
 var cedictFile = "cedict_ts.u8";
 var outputFile = "cedict.json";
-var prettyPrint = false;
+var prettyPrint = true;
 
 if (process.argv.length > 2) {
   cedictFile = process.argv[2];
@@ -17,9 +17,9 @@ if (process.argv.length > 3) {
   }
   outputFile = process.argv[3];
 }
-if (process.argv.length > 4 && process.argv[4] === "-p") {
-  prettyPrint = true;
-}
+// if (process.argv.length > 4 && process.argv[4] === "-p") {
+//   prettyPrint = true;
+// }
 
 /**
  * Object representing an entry in the dictionary.

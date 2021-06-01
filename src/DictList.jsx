@@ -30,14 +30,12 @@ const Search = ({ vocab }) => {
       >
         {({ index, style }) => {
           const entry = filteredEntries[index];
-          // console.log('dict vocab',vocab)
-          const isAdded = vocab.find((v) => {
-            // console.log(v.word,entry.simplified)
-            return v.word === entry.simplified;
+          const added = vocab.find((v) => {
+            return v[1].word === entry.simplified;
           });
 
           return (
-            <div className={`entry ${isAdded ? "isAdded" : ""}`} style={style}>
+            <div className={`entry ${added ? "isAdded" : ""}`} style={style}>
               <div className="word">
                 {entry.simplified} | {entry.pinyin}
                 <br />
@@ -46,15 +44,20 @@ const Search = ({ vocab }) => {
               <div>
                 <button
                   onClick={() => {
-                    if (isAdded) return;
-                    var vocabRef = firebase.database().ref("vocab");
-                    var newVocab = vocabRef.push();
+                    const vocabRef = firebase.database().ref("vocab");
+                    if (added) {
+                      const id = added[0];
+                      return vocabRef.update({
+                        [id]: null,
+                      });
+                    }
+                    const newVocab = vocabRef.push();
                     newVocab.set({
                       word: entry.simplified,
                     });
                   }}
                 >
-                  add
+                  {added ? "remove" : "add"}
                 </button>
               </div>
             </div>
