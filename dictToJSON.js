@@ -33,7 +33,7 @@ function Entry(traditional, simplified, pinyin, definitions) {
   // this.traditional = traditional;
   this.simplified = simplified;
   this.pinyin = pinyin;
-  this.definitions = definitions;
+  this.definitions = definitions.join(', ');
 }
 
 /**

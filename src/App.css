@@ -1,25 +1,29 @@
-body{
+body {
   box-sizing: border-box;
   font-size: 24px;
   max-width: 50rem;
   margin: auto;
 }
-.mainDict{
+input {
+  font-size: 24px;
 }
-button{
+.isAdded {
+  background: lightgreen;
+}
+button {
   padding: 1rem;
   background: none;
   font-size: 24px;
 }
 
-.entry{
-    box-sizing: border-box;
+.entry {
+  box-sizing: border-box;
   overflow-y: auto;
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
   padding: 1rem;
 }
-.def{
+.def {
   font-weight: bold;
 }
