@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import dict from "./cedict.json";
 import DictList from "./DictList";
+import FreqList from "./FreqList";
 import dbRef from "./db";
 
 const modes = {
@@ -23,6 +24,8 @@ function App() {
       }
     });
   }, []);
+
+  return <FreqList />;
 
   return (
     <div>
